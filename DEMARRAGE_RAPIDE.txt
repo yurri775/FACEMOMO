@@ -1,0 +1,131 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║                    DÉMARRAGE RAPIDE - 3 ÉTAPES                        ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+📌 ÉTAPE 1 : Installer les dépendances
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Windows:
+    Double-cliquez sur: install_dependencies.bat
+
+Linux/Mac:
+    pip install seaborn scipy matplotlib
+
+
+📌 ÉTAPE 2 : Tester le système (30 secondes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Windows:
+    Double-cliquez sur: run_demo.bat
+
+Linux/Mac:
+    python quick_demo.py
+
+✅ Résultat: Dossier "demo_statistics_output/" créé avec 4 fichiers
+
+
+📌 ÉTAPE 3 : Analyser vos morphings
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Windows:
+    Double-cliquez sur: run_analysis.bat
+    Choisissez l'option 1 (échantillons de démo)
+
+Linux/Mac:
+    python analyze_morphs.py
+
+✅ Résultat: Dossier "statistics_output/" créé avec 7 fichiers
+
+
+═══════════════════════════════════════════════════════════════════════
+
+📊 QUE CONTIENNENT LES RÉSULTATS?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+statistics_output/
+  ├── fiqa_kde_simple.png          ← Distribution de qualité (méthode simple)
+  ├── fiqa_kde_facequnet.png       ← Distribution de qualité (FaceQnet)
+  ├── fiqa_kde_serfiq.png          ← Distribution de qualité (SER-FIQ)
+  ├── map_comparison.png           ← Morphing Attack Potential
+  ├── det_curve_fiqa.png           ← Courbe de détection
+  ├── fiqa_methods_comparison.png  ← Comparaison des méthodes
+  └── analysis_report.txt          ← Rapport texte complet
+
+═══════════════════════════════════════════════════════════════════════
+
+🎯 COMMANDES PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Démonstration rapide:
+    python quick_demo.py
+
+Analyse des échantillons:
+    python analyze_morphs.py
+
+Analyse avec limite de 20 images:
+    python analyze_morphs.py --max 20
+
+Voir le module de statistiques:
+    python statistics_module.py
+
+Générer de nouveaux échantillons:
+    python generate_samples.py
+
+═══════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION COMPLÈTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GUIDE_EXECUTION.md       ← Guide complet d'exécution (LIRE EN PREMIER!)
+STATISTICS_GUIDE.md      ← Guide détaillé des statistiques
+SYNMORPH_FEATURES.md     ← Fonctionnalités du papier SynMorph
+README.md                ← Documentation générale du projet
+
+═══════════════════════════════════════════════════════════════════════
+
+⚡ RACCOURCIS WINDOWS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+run_demo.bat         ← Double-clic pour démonstration rapide
+run_analysis.bat     ← Double-clic pour analyse complète
+install_dependencies.bat  ← Double-clic pour installer dépendances
+
+═══════════════════════════════════════════════════════════════════════
+
+🎓 POUR PRÉSENTER AU PROFESSEUR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Double-cliquez sur: run_demo.bat
+2. Attendez 30 secondes
+3. Ouvrez le dossier: demo_statistics_output/
+4. Montrez les graphiques et le rapport
+
+Puis:
+5. Double-cliquez sur: run_analysis.bat
+6. Choisissez option 1
+7. Attendez 1-2 minutes
+8. Ouvrez: statistics_output/
+9. Expliquez les résultats
+
+═══════════════════════════════════════════════════════════════════════
+
+❓ PROBLÈMES?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Erreur "ModuleNotFoundError":
+    → Exécutez: install_dependencies.bat
+
+Erreur "Pas assez d'images":
+    → Exécutez d'abord: python generate_samples.py
+
+Autre problème:
+    → Consultez GUIDE_EXECUTION.md section "Résolution de Problèmes"
+
+═══════════════════════════════════════════════════════════════════════
+
+Auteur: Marwa
+Projet: FACEMOMO - Face Morphing Studio
+Basé sur: SynMorph (arXiv:2409.05595v1)
+GitHub: https://github.com/yurri775/FACEMOMO.git
+
+═══════════════════════════════════════════════════════════════════════

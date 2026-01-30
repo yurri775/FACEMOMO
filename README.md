@@ -18,13 +18,16 @@
 - 📈 **Métriques détaillées** : vitesse, temps restant, taux de succès
 - 📁 **Échantillons de démonstration** prêts à présenter
 - 🔬 **Basé sur SynMorph** (arXiv:2409.05595) - recherche de pointe 2024
+- 📊 **Système de statistiques complet** : FIQA, MAP, KDE, DET curves
+- 🔍 **Analyse de qualité** : Évaluation biométrique des morphings
+- 📈 **Vulnérabilité FRS** : Test d'attaque sur multiples systèmes
 
 ## 🚀 Installation
 
 ### Prérequis
 
 ```bash
-pip install numpy opencv-python dlib matplotlib scikit-learn pillow imageio tqdm
+pip install numpy opencv-python dlib matplotlib scikit-learn pillow imageio tqdm seaborn scipy
 ```
 
 ### Téléchargement du modèle Dlib
@@ -51,12 +54,43 @@ CREATE_GIFS = True        # Créer des GIFs animés
 CREATE_GRID = True        # Créer une grille artistique
 ```
 
+### Mode Analyse Statistique ⭐ **NOUVEAU**
+
+Analysez la qualité et la vulnérabilité de vos morphings avec le système de statistiques basé sur SynMorph :
+
+```bash
+# Analyse complète des échantillons
+python analyze_morphs.py --morph sample_data/after_morph --bona-fide sample_data/before_morph
+
+# Analyser vos propres résultats
+python analyze_morphs.py --morph morphing_results --bona-fide sample_data/before_morph
+
+# Limiter le nombre d'images pour un test rapide
+python analyze_morphs.py --morph morphing_results --bona-fide sample_data/before_morph --max 50
+```
+
+**Le système génère automatiquement :**
+- 📊 **FIQA Analysis** : Évaluation de la qualité des images (3 méthodes)
+- 📈 **MAP Analysis** : Morphing Attack Potential sur 4 systèmes FRS
+- 📉 **KDE Plots** : Distributions de qualité avec KL-Divergence
+- 🎯 **DET Curves** : MACER vs BPCER pour la détection
+- 📄 **Rapports** : Fichiers texte avec statistiques complètes
+
+Tous les résultats sont sauvegardés dans `statistics_output/` :
+- `fiqa_kde_*.png` - Distributions de qualité
+- `map_comparison.png` - Comparaison des scores MAP
+- `det_curve_fiqa.png` - Courbe DET
+- `fiqa_methods_comparison.png` - Comparaison des méthodes
+- `analysis_report.txt` - Rapport complet
+
 ## 📁 Structure du Projet
 
 ```
 moprh/
 ├── morph1.ipynb              # Notebook principal amélioré
 ├── generate_samples.py       # Script de génération d'échantillons
+├── statistics_module.py      # ⭐ Module de statistiques (FIQA, MAP, visualisations)
+├── analyze_morphs.py         # ⭐ Script d'analyse statistique complet
 ├── README.md                 # Ce fichier
 ├── SYNMORPH_FEATURES.md      # Documentation des fonctionnalités SynMorph
 ├── .gitignore               # Fichiers ignorés par git
@@ -69,6 +103,11 @@ moprh/
 ├── morphing_results/        # Résultats de génération (non versionnés)
 │   ├── gifs/               # GIFs animés
 │   └── grids/              # Grilles artistiques
+├── statistics_output/       # ⭐ Résultats d'analyse statistique
+│   ├── fiqa_kde_*.png      # Distributions de qualité
+│   ├── map_comparison.png  # Comparaison MAP
+│   ├── det_curve_*.png     # Courbes DET
+│   └── analysis_report.txt # Rapport complet
 └── dlib_models/            # Modèles de détection (non versionnés)
 ```
 
